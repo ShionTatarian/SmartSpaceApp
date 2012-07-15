@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="20dp"
+    android:background="@drawable/round_box"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/bubble_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="@string/bubble_hint_name"
+        android:inputType="textCapSentences" />
+
+    <EditText
+        android:id="@+id/bubble_content"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        android:layout_weight="1"
+        android:gravity="top|left"
+        android:hint="@string/bubble_hint_content"
+        android:inputType="textCapSentences" />
+
+    <EditText
+        android:id="@+id/bubble_location"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="@string/bubble_hint_location"
+        android:inputType="textCapSentences" />
+
+</LinearLayout>
