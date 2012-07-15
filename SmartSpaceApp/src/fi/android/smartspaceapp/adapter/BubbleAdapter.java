@@ -13,7 +13,6 @@ public class BubbleAdapter extends ArrayAdapter<Bubble> {
 
 	private final int TYPE_COUNT = 2;
 	
-	
 	public BubbleAdapter(Context context) {
 		super(context, 0);
 	}
@@ -37,7 +36,7 @@ public class BubbleAdapter extends ArrayAdapter<Bubble> {
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		if(convertView == null) {
-			convertView = LayoutInflater.from(getContext()).inflate(R.layout.bubble_gallery_page, parent);
+			convertView = LayoutInflater.from(getContext()).inflate(R.layout.bubble_gallery_page, parent, false);
 			convertView.setTag(new ViewHolder(convertView));
 		}
 		
