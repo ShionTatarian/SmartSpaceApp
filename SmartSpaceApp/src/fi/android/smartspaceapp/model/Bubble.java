@@ -15,7 +15,7 @@ public class Bubble implements Serializable{
 	
 	public static final String Intent = "bubble_intent";
 	
-	private long id;
+	private long id = -1;
 	private String name = "";
 	private String content = "";
 	private String location = "";
@@ -29,10 +29,11 @@ public class Bubble implements Serializable{
 	}
 	
 	public Bubble(long id) {
-		
+		this.id = id;
 	}
 	
 	public Bubble(Cursor c) {
+		int idIndex = c.getColumnIndex(SmartSpaceDatabase.BubbleColumns.ID);
 		int nameIndex = c.getColumnIndex(SmartSpaceDatabase.BubbleColumns.NAME);
 		int contentIndex = c.getColumnIndex(SmartSpaceDatabase.BubbleColumns.CONTENT); 
 		int locationIndex = c.getColumnIndex(SmartSpaceDatabase.BubbleColumns.LOCATION);
@@ -40,6 +41,8 @@ public class Bubble implements Serializable{
 		int latitudeIndex = c.getColumnIndex(SmartSpaceDatabase.BubbleColumns.LATITUDE);
 		int longitudeIndex = c.getColumnIndex(SmartSpaceDatabase.BubbleColumns.LOCATION);
 		int parentIndex = c.getColumnIndex(SmartSpaceDatabase.BubbleColumns.PARENT_ID);
+		
+		id = c.getLong(idIndex);
 		
 		if(nameIndex != -1) {
 			name = c.getString(nameIndex);

@@ -12,31 +12,27 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="onNewBubbleClick"
-            android:text="new bubble" />
+            android:onClick="onNewMainBubbleClick"
+            android:text="New Main Bubble" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onNewSubBubbleClick"
+            android:text="New Sub Bubble" />
     </LinearLayout>
 
     <fi.android.smartspaceapp.view.ListGallery
         android:id="@+id/main_bubble_gallery"
         android:layout_width="fill_parent"
-        android:layout_height="100dp"
+        android:layout_height="150dp"
         android:layout_gravity="center"
         android:spacing="10dp" />
 
-    <LinearLayout
+    <ListView
+        android:id="@+id/sub_bubble_list"
         android:layout_width="fill_parent"
         android:layout_height="0dp"
-        android:layout_weight="3"
-        android:background="@android:color/holo_blue_light"
-        android:orientation="horizontal" >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bubble"
-            android:padding="10dp"
-            android:text="bubble"
-            android:textColor="@android:color/black" />
-    </LinearLayout>
+        android:layout_weight="1" />
 
 </LinearLayout>

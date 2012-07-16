@@ -9,16 +9,16 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-public class BubbleAdapter extends ArrayAdapter<Bubble> {
+public class SubBubbleAdapter extends ArrayAdapter<Bubble> {
 
-	public BubbleAdapter(Context context) {
+	public SubBubbleAdapter(Context context) {
 		super(context, 0);
 	}
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		if(convertView == null) {
-			convertView = LayoutInflater.from(getContext()).inflate(R.layout.bubble_gallery_page, parent, false);
+			convertView = LayoutInflater.from(getContext()).inflate(R.layout.sub_bubble_row, parent, false);
 			convertView.setTag(new ViewHolder(convertView));
 		}
 		
@@ -36,7 +36,8 @@ public class BubbleAdapter extends ArrayAdapter<Bubble> {
 		private TextView name;
 		
 		private ViewHolder(View v) {
-			name = (TextView) v.findViewById(R.id.bubble_gallery_name);
+			name = (TextView) v.findViewById(R.id.sub_bubble_name);
 		}
 	}
+	
 }

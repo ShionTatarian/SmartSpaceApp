@@ -6,10 +6,13 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 import fi.android.smartspaceapp.model.Bubble;
 
 public class SmartSpaceDatabase extends SQLiteOpenHelper {
 
+	private final String TAG = "SmartSpaceDatabase";
+	
 	private static SmartSpaceDatabase instance;
 	private Context ctx;
 	
@@ -85,11 +88,17 @@ public class SmartSpaceDatabase extends SQLiteOpenHelper {
 		values.put(BubbleColumns.LONGITUDE, bubble.getLongitude());
 		values.put(BubbleColumns.PARENT_ID, bubble.getParentID());
 		
+		long change = -1;
+		
 		try {
-			db.insertOrThrow(BUBBLE_TABLE, null, values);
+			change = db.insertOrThrow(BUBBLE_TABLE, null, values);
 		} catch (SQLException e) {
 			String where = BubbleColumns.ID + " = " + bubble.getId();
-			db.update(BUBBLE_TABLE, values, where, null);
+			change = db.update(BUBBLE_TABLE, values, where, null);
+		}
+		
+		if(change != -1) {
+			Log.v(TAG, "Bubble ["+bubble.getName()+"] stored to database.");
 		}
 	}
 	
@@ -102,7 +111,7 @@ public class SmartSpaceDatabase extends SQLiteOpenHelper {
 			selection = BubbleColumns.PARENT_ID +" = -1";
 		}
 		
-		return db.query(BUBBLE_TABLE, null, selection, null, null, null, null);
+		return db.query(BUBBLE_TABLE, null, selection, null, null, null, BubbleColumns.NAME);
 	}
 
 }

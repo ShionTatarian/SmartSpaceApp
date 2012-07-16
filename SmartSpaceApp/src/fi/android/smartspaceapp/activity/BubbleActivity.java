@@ -27,6 +27,10 @@ public class BubbleActivity extends BaseActivity {
 		name = (EditText) findViewById(R.id.bubble_name);
 		content = (EditText) findViewById(R.id.bubble_content);
 		location = (EditText) findViewById(R.id.bubble_location);
+		
+		name.setText(bubble.getName());
+		content.setText(bubble.getContent());
+		location.setText(bubble.getLocation());
 	}
 	
 	@Override
