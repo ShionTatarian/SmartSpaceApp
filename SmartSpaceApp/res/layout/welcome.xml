@@ -117,7 +117,7 @@
             android:background="@android:drawable/list_selector_background"
             android:gravity="center_vertical"
             android:padding="10dp"
-            android:text="Tommy Eklund"
+            android:text="Tommy Testaaja"
             android:textSize="18dp" />
 
         <TextView
