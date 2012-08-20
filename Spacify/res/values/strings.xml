@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Spacify</string>
+
+    <!-- Controls -->
+    <string name="control_fullscreen">Fullscreen</string>
+
+</resources>

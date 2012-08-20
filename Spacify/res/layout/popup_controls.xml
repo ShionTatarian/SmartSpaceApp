@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/popup_control_background"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white_transparent_50" >
+
+    <ListView
+        android:id="@+id/popup_control_list"
+        android:layout_width="@dimen/popup_control_width"
+        android:layout_height="wrap_content"
+        android:background="@drawable/popup_control_box"
+        android:padding="@dimen/margin_normal" >
+    </ListView>
+
+</RelativeLayout>
